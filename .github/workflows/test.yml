@@ -74,7 +74,7 @@ jobs:
           rm -v docker-compose.yml && mv -v docker-compose.override.yml docker-compose.yml
           
        - name: Build images (linux/amd64)
-         uses: docker/bake-action@v2
+         uses: docker/bake-action@v4
          with:
            targets: ${{ matrix.target }}
            push: false
@@ -82,7 +82,7 @@ jobs:
              *.platform=linux/amd64
              
        - name: Build images (linux/arm64)
-         uses: docker/bake-action@v2
+         uses: docker/bake-action@v4
          with:
            targets: ${{ matrix.target }}
            push: false
