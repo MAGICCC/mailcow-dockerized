@@ -16,7 +16,7 @@ jobs:
         matrix: ${{ steps.targets.outputs.matrix }}
       steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: 'feat/arm64-cow'
       
@@ -51,7 +51,7 @@ jobs:
      
       steps:
        - name: Checkouts
-         uses: actions/checkout@v3
+         uses: actions/checkout@v4
          with:
            ref: 'feat/arm64-cow'
       
