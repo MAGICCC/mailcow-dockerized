@@ -113,9 +113,9 @@
             'dev_requirement' => false,
         ),
         'php-mime-mail-parser/php-mime-mail-parser' => array(
-            'pretty_version' => '7.0.0',
-            'version' => '7.0.0.0',
-            'reference' => '9d09a017f3f103fec8456211a4a538b80e0eca0d',
+            'pretty_version' => '7.1.2',
+            'version' => '7.1.2.0',
+            'reference' => '81d84bbc6a73b913110e155e98059526825c7ee3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../php-mime-mail-parser/php-mime-mail-parser',
             'aliases' => array(),

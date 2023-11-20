@@ -614,17 +614,17 @@
         },
         {
             "name": "php-mime-mail-parser/php-mime-mail-parser",
-            "version": "7.0.0",
-            "version_normalized": "7.0.0.0",
+            "version": "7.1.2",
+            "version_normalized": "7.1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-mime-mail-parser/php-mime-mail-parser.git",
-                "reference": "9d09a017f3f103fec8456211a4a538b80e0eca0d"
+                "reference": "81d84bbc6a73b913110e155e98059526825c7ee3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/9d09a017f3f103fec8456211a4a538b80e0eca0d",
-                "reference": "9d09a017f3f103fec8456211a4a538b80e0eca0d",
+                "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/81d84bbc6a73b913110e155e98059526825c7ee3",
+                "reference": "81d84bbc6a73b913110e155e98059526825c7ee3",
                 "shasum": ""
             },
             "require": {
@@ -637,10 +637,10 @@
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.2",
-                "phpunit/phpunit": "^8.0",
+                "phpunit/phpunit": "^9.3",
                 "squizlabs/php_codesniffer": "^3.5"
             },
-            "time": "2021-02-25T17:21:57+00:00",
+            "time": "2022-04-16T07:56:53+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -696,7 +696,7 @@
             ],
             "support": {
                 "issues": "https://github.com/php-mime-mail-parser/php-mime-mail-parser/issues",
-                "source": "https://github.com/php-mime-mail-parser/php-mime-mail-parser/tree/7.0.0"
+                "source": "https://github.com/php-mime-mail-parser/php-mime-mail-parser/tree/7.1.2"
             },
             "funding": [
                 {
