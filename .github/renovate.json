@@ -10,7 +10,7 @@
     "@magiccc"
   ],
   "baseBranches": ["staging"],
-  "enabledManagers": ["github-actions", "regex", "docker-compose"],
+  "enabledManagers": ["github-actions", "regex", "docker-compose", "composer"],
   "ignorePaths": [
     "data\/web\/inc\/lib\/vendor\/**"
   ],
