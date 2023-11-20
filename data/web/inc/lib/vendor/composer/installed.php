@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'bshaffer/oauth2-server-php' => array(
-            'pretty_version' => 'v1.11.1',
-            'version' => '1.11.1.0',
-            'reference' => '5a0c8000d4763b276919e2106f54eddda6bc50fa',
+            'pretty_version' => 'v1.14.1',
+            'version' => '1.14.1.0',
+            'reference' => '096db2c86a7d67a2ba45e72be7d208c342694542',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bshaffer/oauth2-server-php',
             'aliases' => array(),
