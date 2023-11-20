@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'ddeboer/imap' => array(
-            'pretty_version' => '1.13.1',
-            'version' => '1.13.1.0',
-            'reference' => '8b772d04b1deadb5df13782fb78c4b648f77496e',
+            'pretty_version' => '1.19.0',
+            'version' => '1.19.0.0',
+            'reference' => '30800b1cfeacc4add5bb418e40a8b6e95a8a04ac',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ddeboer/imap',
             'aliases' => array(),
