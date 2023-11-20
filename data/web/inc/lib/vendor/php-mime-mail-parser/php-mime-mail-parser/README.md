@@ -1,8 +1,8 @@
 # php-mime-mail-parser
 
-A fully tested email parser for PHP 7.2+ (mailparse extension wrapper).
+A fully tested email parser for PHP 8.0+ (mailparse extension wrapper).
 
-It's the most effective php email parser around in terms of performance, foreign character encoding, attachment handling, and ease of use.
+It's the most effective PHP email parser around in terms of performance, foreign character encoding, attachment handling, and ease of use.
 Internet Message Format RFC [822](https://tools.ietf.org/html/rfc822), [2822](https://tools.ietf.org/html/rfc2822), [5322](https://tools.ietf.org/html/rfc5322).
 
 [![Latest Version](https://img.shields.io/packagist/v/php-mime-mail-parser/php-mime-mail-parser.svg?style=flat-square)](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases)
@@ -13,9 +13,9 @@ Internet Message Format RFC [822](https://tools.ietf.org/html/rfc822), [2822](ht
 
 This extension can be used to...
  * Parse and read email from Postfix
- * For reading messages (Filename extension: eml)
+ * Read messages (Filename extension: `.eml`)
  * Create webmail 
- * Store email information such a subject, HTML body, attachments, and etc. into a database
+ * Store email information such a subject, HTML body, attachments, etc. into a database
 
 ## Is it reliable?
 
@@ -23,10 +23,9 @@ Yes. All known issues have been reproduced, fixed and tested.
 
 We use GitHub Actions, Codecov, Codacy to help ensure code quality. You can see real-time statistics below:
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fphp-mime-mail-parser%2Fphp-mime-mail-parser%2Fbadge%3Fref%3Dmaster&style=flat-square)](https://actions-badge.atrox.dev/php-mime-mail-parser/php-mime-mail-parser/goto?ref=master)
-[![Coverage](https://img.shields.io/codecov/c/gh/php-mime-mail-parser/php-mime-mail-parser?style=flat-square)](https://codecov.io/gh/php-mime-mail-parser/php-mime-mail-parser)
-[![Code Quality](https://img.shields.io/codacy/grade/4e0e44fee21147ddbdd18ff976251875?style=flat-square)](https://app.codacy.com/app/php-mime-mail-parser/php-mime-mail-parser)
-
+[![CI](https://github.com/php-mime-mail-parser/php-mime-mail-parser/actions/workflows/main.yml/badge.svg?style=flat-square)](https://github.com/php-mime-mail-parser/php-mime-mail-parser/actions/workflows/main.yml)
+[![Coverage](https://codecov.io/gh/php-mime-mail-parser/php-mime-mail-parser/branch/main/graph/badge.svg?token=wTSIbXJDL0)](https://codecov.io/gh/php-mime-mail-parser/php-mime-mail-parser)
+[![Code Quality](https://app.codacy.com/project/badge/Grade/8cbfe0fcd84c4b2b9282b9a0b4467607)](https://www.codacy.com/gh/php-mime-mail-parser/php-mime-mail-parser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=php-mime-mail-parser/php-mime-mail-parser&amp;utm_campaign=Badge_Grade)
 
 ## How do I install it?
 
@@ -40,32 +39,35 @@ To install the latest version of PHP MIME Mail Parser, run the command below:
 
 The following versions of PHP are supported:
 
-* PHP 7.2
-* PHP 7.3
-* PHP 7.4
+* PHP 8.0
+* PHP 8.1
+* PHP 8.2
 
 Previous Versions:
 
-| PHP Compatibility  | Version |
-| ------------- | ------------- |
-| HHVM  | php-mime-mail-parser 2.11.1    |
-| PHP 5.4  | php-mime-mail-parser 2.11.1 |
-| PHP 5.5  | php-mime-mail-parser 2.11.1 |
-| PHP 5.6  | php-mime-mail-parser 3.0.4  |
-| PHP 7.0  | php-mime-mail-parser 3.0.4  |
-| PHP 7.1  | php-mime-mail-parser 5.0.5  |
+| PHP Compatibility | Version                     |
+|-------------------|-----------------------------|
+| HHVM              | [php-mime-mail-parser 2.11.1](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/2.11.1) |
+| PHP 5.4           | [php-mime-mail-parser 2.11.1](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/2.11.1) |
+| PHP 5.5           | [php-mime-mail-parser 2.11.1](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/2.11.1) |
+| PHP 5.6           | [php-mime-mail-parser 3.0.4](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/3.0.4)  |
+| PHP 7.0           | [php-mime-mail-parser 3.0.4](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/3.0.4)  |
+| PHP 7.1           | [php-mime-mail-parser 5.0.5](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/5.0.5)  |
+| PHP 7.2           | [php-mime-mail-parser 7.1.2](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/7.1.2)  |
+| PHP 7.3           | [php-mime-mail-parser 7.1.2](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/7.1.2)  |
+| PHP 7.4           | [php-mime-mail-parser 7.1.2](https://github.com/php-mime-mail-parser/php-mime-mail-parser/releases/tag/7.1.2)  |
 
-Make sure you have the mailparse extension (http://php.net/manual/en/book.mailparse.php) properly installed. The command line `php -m | grep mailparse` need to return "mailparse".
+Make sure you have the mailparse extension (http://php.net/manual/en/book.mailparse.php) properly installed. The command line `php -m | grep mailparse` needs to return "mailparse".
 
 
 ### Install mailparse extension
 
-#### Ubuntu, Debian & derivatives
+#### Debian, Ubuntu & derivatives
 ```
 sudo apt install php-cli php-mailparse
 ```
 
-#### Others platforms
+#### Other platforms
 ```
 sudo apt install php-cli php-pear php-dev php-mbstring
 pecl install mailparse
@@ -87,13 +89,13 @@ sudo phpenmod mailparse
 ```
 
 #### Windows
-You need to download mailparse DLL from http://pecl.php.net/package/mailparse and add the line "extension=php_mailparse.dll" to php.ini accordingly.
+You need to download mailparse DLL from http://pecl.php.net/package/mailparse and add the line `extension=php_mailparse.dll` to `php.ini` accordingly.
 
 ## How do I use it?
 
 ### Loading an email
 
-You can load an email with 4 differents ways. You only need to use one of the following four.
+You can load an email in 4 differents ways:
 
 ```php
 require_once __DIR__.'/vendor/autoload.php';
@@ -101,16 +103,16 @@ require_once __DIR__.'/vendor/autoload.php';
 $path = 'path/to/email.eml';
 $parser = new PhpMimeMailParser\Parser();
 
-// 1. Specify a file path (string)
+// 1. Either specify a file path (string)
 $parser->setPath($path); 
 
-// 2. Specify the raw mime mail text (string)
+// 2. or specify the raw mime mail text (string)
 $parser->setText(file_get_contents($path));
 
-// 3. Specify a php file resource (stream)
+// 3. or specify a php file resource (stream)
 $parser->setStream(fopen($path, "r"));
 
-// 4.  Specify a stream to work with mail server (stream)
+// 4. or specify a stream to work with a mail server (stream)
 $parser->setStream(fopen("php://stdin", "r"));
 ```
 
@@ -198,20 +200,23 @@ $attachments = $parser->getAttachments(false);
 ```
 
 
-Loop through all the Attachments
+Loop through all attachments
 ```php
 foreach ($attachments as $attachment) {
-    echo 'Filename : '.$attachment->getFilename().'<br />';
+    echo 'Filename : '.$attachment->getFilename().'<br>';
     // return logo.jpg
     
-    echo 'Filesize : '.filesize($attach_dir.$attachment->getFilename()).'<br />';
+    echo 'Filesize : '.filesize($attach_dir.$attachment->getFilename()).'<br>';
     // return 1000
     
-    echo 'Filetype : '.$attachment->getContentType().'<br />';
+    echo 'Filetype : '.$attachment->getContentType().'<br>';
     // return image/jpeg
     
-    echo 'MIME part string : '.$attachment->getMimePartStr().'<br />';
+    echo 'MIME part string : '.$attachment->getMimePartStr().'<br>';
     // return the whole MIME part of the attachment
+    
+    $stream = $attachment->getStream();
+    // get the stream of the attachment file
 
     $attachment->save('/path/to/save/myattachment/', Parser::ATTACHMENT_DUPLICATE_SUFFIX);
     // return the path and the filename saved (same strategy available than saveAttachments)
@@ -220,9 +225,9 @@ foreach ($attachments as $attachment) {
 
 ## Postfix configuration to manage email from a mail server
 
-Next you need to forward emails to this script above. For that I'm using [Postfix](http://www.postfix.org/) like a mail server, you need to configure /etc/postfix/master.cf
+To forward mails from [Postfix](http://www.postfix.org/) to the PHP script above, add this line at the end of your `/etc/postfix/master.cf`
+(to specify myhook to send all emails to the script `test.php`):
 
-Add this line at the end of the file (specify myhook to send all emails to the script test.php)
 ```
 myhook unix - n n - - pipe
   				flags=F user=www-data argv=php -c /etc/php5/apache2/php.ini -f /var/www/test.php ${sender} ${size} ${recipient}
@@ -234,7 +239,7 @@ smtp      inet  n       -       -       -       -       smtpd
         			-o content_filter=myhook:dummy
 ```
 
-The php script must use the fourth method to work with this configuration.
+The PHP script must use the fourth method (see above) to work with this configuration.
 
 And finally the easiest way is to use my SaaS https://mailcare.io
 
