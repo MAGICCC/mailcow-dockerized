@@ -18,7 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: 'feat/arm64-cow'
+          repository: 'mailcow/mailcow-dockerized'
+          ref: 'master'
       
       - name: Prepare bake file
         run: |
@@ -53,7 +54,8 @@ jobs:
        - name: Checkouts
          uses: actions/checkout@v3
          with:
-           ref: 'feat/arm64-cow'
+           repository: 'mailcow/mailcow-dockerized'
+           ref: 'master'
       
        - name: Set up QEMU
          uses: docker/setup-qemu-action@v2
