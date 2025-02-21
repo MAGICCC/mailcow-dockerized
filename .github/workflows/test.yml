@@ -82,7 +82,9 @@ jobs:
           rm -v docker-compose.yml && mv -v docker-compose.override.yml docker-compose.yml
 
        - name: Show tags for debugging
-         run: echo "${{ needs.targets.outputs.tags }}"
+         run: |
+           echo "$GITHUB_OUTPUT"
+           echo "${{ needs.targets.outputs.tags }}"
         
        - name: Build images (linux/amd64)
          uses: docker/bake-action@v6
