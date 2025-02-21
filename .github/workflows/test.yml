@@ -80,6 +80,7 @@ jobs:
        - name: Build images (linux/amd64)
          uses: docker/bake-action@v6
          with:
+           source: .
            targets: ${{ matrix.target }}
            push: true
            set: |
@@ -88,6 +89,7 @@ jobs:
        - name: Build images (linux/arm64)
          uses: docker/bake-action@v6
          with:
+           source: .
            targets: ${{ matrix.target }}
            push: true
            set: |
