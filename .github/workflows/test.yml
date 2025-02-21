@@ -83,8 +83,7 @@ jobs:
 
        - name: Show tags for debugging
          run: |
-           echo $GITHUB_OUTPUT
-           echo "${{ needs.targets.outputs.tags }}"
+           echo "${{ needs.targets.outputs.matrix }}"
         
        - name: Build images (linux/amd64)
          uses: docker/bake-action@v6
