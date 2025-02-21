@@ -36,8 +36,6 @@ jobs:
     
           echo "matrix=$TARGETS" >> $GITHUB_OUTPUT
           echo "tags=$TAGS" >> $GITHUB_OUTPUT
-          echo "test echos"
-          cat $GITHUB_OUTPUT
         
       - name: Show matrix + tags
         run: |
@@ -85,7 +83,8 @@ jobs:
 
        - name: Show tags for debugging
          run: |
-           echo "${{ needs.targets.outputs.matrix }}"
+           cat $GITHUB_OUTPUT
+           echo "${{ needs.targets.outputs.tags }}"
         
        - name: Build images (linux/amd64)
          uses: docker/bake-action@v6
