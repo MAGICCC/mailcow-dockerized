@@ -83,7 +83,7 @@ jobs:
 
        - name: Show tags for debugging
          run: |
-           echo "$GITHUB_OUTPUT"
+           echo $GITHUB_OUTPUT
            echo "${{ needs.targets.outputs.tags }}"
         
        - name: Build images (linux/amd64)
