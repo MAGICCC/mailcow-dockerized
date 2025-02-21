@@ -89,7 +89,7 @@ jobs:
            push: false
            set: |
              *.platform=linux/amd64
-             *.tags=${{ fromJson(needs.targets.outputs.tags).target[matrix.target] }}
+             *.tags=${{ fromJson(needs.targets.outputs.tags) }}
              
        - name: Build images (linux/arm64)
          uses: docker/bake-action@v6
