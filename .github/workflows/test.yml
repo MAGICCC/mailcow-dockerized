@@ -30,13 +30,17 @@ jobs:
       - name: Create matrix
         id: targets
         run: |
-          docker buildx bake --print
-          TARGETS=$(docker buildx bake --print | jq -cr ".group.default.targets")
-          echo "matrix=$TARGETS" >> $GITHUB_OUTPUT  
+          BAKE_DEFINITIONS=$(docker buildx bake --print)
+          TARGETS=$(echo "$BAKE_DEFINITIONS" | jq -cr ".group.default.targets")
+          TAGS=$(echo "$BAKE_DEFINITIONS" | jq -c '{target: to_entries | map({(.key): .value.tags[0]}) | add}')
+    
+          echo "matrix=$TARGETS" >> $GITHUB_OUTPUT
+          echo "tags=$TAGS" >> $GITHUB_OUTPUT
         
-      - name: Show matrix
+      - name: Show matrix + tags
         run: |
           echo ${{ steps.targets.outputs.matrix }}
+          echo ${{ steps.targets.outputs.tags }}
       
       
   build:
@@ -85,7 +89,7 @@ jobs:
            push: false
            set: |
              *.platform=linux/amd64
-             *.tags=ghcr.io/${{ github.repository_owner }}/mailcow-dockerized/${{ matrix.target }}
+             *.tags=${{ fromJson(needs.targets.outputs.tags)[matrix.target] }}
              
        - name: Build images (linux/arm64)
          uses: docker/bake-action@v6
@@ -95,4 +99,4 @@ jobs:
            push: false
            set: |
              *.platform=linux/arm64
-             *.tags=ghcr.io/${{ github.repository_owner }}/mailcow-dockerized/${{ matrix.target }}
+             *.tags=${{ fromJson(needs.targets.outputs.tags)[matrix.target] }}
