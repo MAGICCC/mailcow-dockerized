@@ -85,6 +85,7 @@ jobs:
            push: true
            set: |
              *.platform=linux/amd64
+             *.output=type=image,name=ghcr.io/${{ github.repository_owner }}/mailcow-${{ matrix.target }},push=true
              
        - name: Build images (linux/arm64)
          uses: docker/bake-action@v6
@@ -94,3 +95,4 @@ jobs:
            push: true
            set: |
              *.platform=linux/arm64
+             *.output=type=image,name=ghcr.io/${{ github.repository_owner }}/mailcow-${{ matrix.target }},push=true
