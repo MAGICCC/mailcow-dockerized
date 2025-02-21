@@ -36,6 +36,8 @@ jobs:
     
           echo "matrix=$TARGETS" >> $GITHUB_OUTPUT
           echo "tags=$TAGS" >> $GITHUB_OUTPUT
+          echo "test echos"
+          echo $TAGS
         
       - name: Show matrix + tags
         run: |
