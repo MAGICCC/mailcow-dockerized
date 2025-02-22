@@ -89,9 +89,9 @@
             'dev_requirement' => false,
         ),
         'matthiasmullie/minify' => array(
-            'pretty_version' => '1.3.71',
-            'version' => '1.3.71.0',
-            'reference' => 'ae42a47d7fecc1fbb7277b2f2d84c37a33edc3b1',
+            'pretty_version' => '1.3.73',
+            'version' => '1.3.73.0',
+            'reference' => 'cb7a9297b4ab070909cefade30ee95054d4ae87a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../matthiasmullie/minify',
             'aliases' => array(),
