@@ -45,7 +45,7 @@ final class Mailbox implements MailboxInterface
     {
         $encodedName = \mb_convert_encoding($name, 'UTF7-IMAP', 'UTF-8');
         $oldFullName = $this->getFullEncodedName();
-        $newFullName = \preg_replace('/' . \preg_quote(\mb_convert_encoding($this->name, 'UTF7-IMAP', 'UTF-8')) . '$/', $encodedName, $oldFullName);
+        $newFullName = \preg_replace('/' . \preg_quote(\mb_convert_encoding($this->name, 'UTF7-IMAP', 'UTF-8'), '/') . '$/', $encodedName, $oldFullName);
         \assert(null !== $newFullName);
 
         $return = \imap_renamemailbox($this->resource->getStream(), $oldFullName, $newFullName);
@@ -90,10 +90,12 @@ final class Mailbox implements MailboxInterface
             throw new ImapNumMsgException('imap_num_msg failed');
         }
 
+        \assert(0 <= $return);
+
         return $return;
     }
 
-    public function getStatus(int $flags = null): \stdClass
+    public function getStatus(?int $flags = null): \stdClass
     {
         $return = \imap_status($this->resource->getStream(), $this->getFullEncodedName(), $flags ?? \SA_ALL);
 
@@ -114,7 +116,7 @@ final class Mailbox implements MailboxInterface
         return \imap_clearflag_full($this->resource->getStream(), $this->prepareMessageIds($numbers), $flag, \ST_UID);
     }
 
-    public function getMessages(ConditionInterface $search = null, int $sortCriteria = null, bool $descending = false, string $charset = null): MessageIteratorInterface
+    public function getMessages(?ConditionInterface $search = null, ?int $sortCriteria = null, bool $descending = false, ?string $charset = null): MessageIteratorInterface
     {
         if (null === $search) {
             $search = new All();
@@ -191,7 +193,7 @@ final class Mailbox implements MailboxInterface
         return $this->getMessages();
     }
 
-    public function addMessage(string $message, string $options = null, \DateTimeInterface $internalDate = null): bool
+    public function addMessage(string $message, ?string $options = null, ?\DateTimeInterface $internalDate = null): bool
     {
         $arguments = [
             $this->resource->getStream(),
@@ -208,9 +210,7 @@ final class Mailbox implements MailboxInterface
 
     public function getThread(): array
     {
-        \set_error_handler(static function (): bool {
-            return true;
-        });
+        \set_error_handler(static fn (): bool => true);
 
         /** @var array<string, int>|false $tree */
         $tree = \imap_thread($this->resource->getStream(), \SE_UID);

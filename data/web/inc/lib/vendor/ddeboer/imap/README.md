@@ -3,11 +3,10 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ddeboer/imap.svg)](https://packagist.org/packages/ddeboer/imap)
 [![Downloads](https://img.shields.io/packagist/dt/ddeboer/imap.svg)](https://packagist.org/packages/ddeboer/imap)
 [![Integrate](https://github.com/ddeboer/imap/workflows/CI/badge.svg)](https://github.com/ddeboer/imap/actions)
-[![Code Coverage](https://codecov.io/gh/ddeboer/imap/coverage.svg?branch=master)](https://codecov.io/gh/ddeboer/imap?branch=master)
 
 A PHP IMAP library to read and process e-mails over IMAP protocol, built with robust Object-Oriented architecture.
 
-This library requires PHP >= 8.2 with [IMAP](https://www.php.net/manual/en/book.imap.php),
+This library requires PHP >= 8.4 with [IMAP](https://www.php.net/manual/en/book.imap.php),
 [iconv](https://www.php.net/manual/en/book.iconv.php) and
 [Multibyte String](https://www.php.net/manual/en/book.mbstring.php) extensions installed.
 

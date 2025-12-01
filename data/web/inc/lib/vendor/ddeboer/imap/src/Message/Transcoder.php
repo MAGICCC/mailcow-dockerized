@@ -285,9 +285,7 @@ final class Transcoder
             $fromCharset = self::CHARSET_ALIASES[$lowercaseFromCharset];
         }
 
-        \set_error_handler(static function (): bool {
-            return true;
-        });
+        \set_error_handler(static fn (): bool => true);
 
         $iconvDecodedText = \iconv($fromCharset, 'UTF-8', $text);
         if (false === $iconvDecodedText) {
@@ -313,6 +311,7 @@ final class Transcoder
 
         try {
             $decodedText = \mb_convert_encoding($text, 'UTF-8', $fromCharset);
+            \assert(false !== $decodedText);
         } catch (\Error $error) {
             $errorMessage = $error->getMessage();
         }
