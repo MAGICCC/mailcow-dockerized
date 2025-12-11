@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: data/Dockerfiles/backup/Dockerfile
           push: true
-          tags: ghcr.io/MAGICCC/backup:latest
+          tags: ghcr.io/magiccc/backup:latest
